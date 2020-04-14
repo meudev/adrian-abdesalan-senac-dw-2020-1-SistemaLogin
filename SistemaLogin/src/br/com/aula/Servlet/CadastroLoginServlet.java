@@ -2,6 +2,7 @@ package br.com.aula.Servlet;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import br.com.aula.DAO.LoginDAO;
+import br.com.aula.Model.LoginModel;
+import br.com.aula.conexao.CriarConexao;
 
 @WebServlet("/CadastroLogin")
 public class CadastroLoginServlet extends HttpServlet {
@@ -33,7 +38,7 @@ public class CadastroLoginServlet extends HttpServlet {
 			try {
 				con = CriarConexao.getConexao();
 				
-				Login login = new Login();
+				LoginModel login = new LoginModel();
 				login.setUsuario(usuario);
 				login.setSenha(senha);
 				
