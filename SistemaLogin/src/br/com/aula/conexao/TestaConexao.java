@@ -7,10 +7,6 @@ import br.com.aula.DAO.LoginDAO;
 import br.com.aula.Model.LoginModel;
 
 public class TestaConexao {
-	
-	
-    
-  //Testar Método Cadastrar
   	
   	public static void main(String[] args) {
   		
@@ -21,7 +17,7 @@ public class TestaConexao {
 			con = CriarConexao.getConexao();
 
 			LoginModel login = new LoginModel();
-			login.setUsuario("usuario teste");
+			login.setUsuario("adrian");
 			login.setSenha("123");
 
 			LoginDAO dao = new LoginDAO(con);
